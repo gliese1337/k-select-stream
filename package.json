@@ -1,0 +1,35 @@
+{
+  "name": "k-select-stream",
+  "version": "1.0.1",
+  "description": "An efficient online k-min selection algorithm based on min-max heaps.",
+  "license": "MIT",
+  "main": "dist/kselect.js",
+  "types": "dist/kselect.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "node ./node_modules/typescript/bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gliese1337/k-select-stream.git"
+  },
+  "keywords": [
+    "select",
+    "k-min",
+    "online",
+    "stream",
+    "heap",
+    "min-max"
+  ],
+  "author": "Logan R. Kearsley",
+  "bugs": {
+    "url": "https://github.com/gliese1337/k-select-stream/issues"
+  },
+  "homepage": "https://github.com/gliese1337/k-select-stream#readme",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  }
+}
