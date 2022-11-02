@@ -1,16 +1,20 @@
 {
   "name": "k-select-stream",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An efficient online k-min selection algorithm based on min-max heaps.",
   "license": "MIT",
-  "main": "dist/kselect.js",
-  "types": "dist/kselect.d.ts",
+  "main": "bin/index.min.js",
+  "types": "bin/index.d.ts",
   "files": [
-    "dist/**/*"
+    "bin/index.min.js",
+    "bin/index.d.ts"
   ],
   "scripts": {
-    "prepare": "npm run build",
-    "build": "node ./node_modules/typescript/bin/tsc"
+    "test": "mocha -r ts-node/register test/**/*-test.ts",
+    "lint": "eslint . --ext .ts --fix",
+    "build": "tsc",
+    "minify": "jsmin -o bin/index.min.js bin/index.js",
+    "prepare": "tsc && npm test && npm run minify"
   },
   "repository": {
     "type": "git",
@@ -30,6 +34,14 @@
   },
   "homepage": "https://github.com/gliese1337/k-select-stream#readme",
   "devDependencies": {
-    "typescript": "^3.3.3333"
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "chai": "^4.3.6",
+    "jsmin": "^1.0.1",
+    "mocha": "^10.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^3.9.10"
   }
 }
